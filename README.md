@@ -6,11 +6,11 @@ This file specifies how the Docker image is to be built. This will generally be
 created the application developer who will then push the built Docker image to
 Dockerhub for public consumption.
 
-An example of building a docker image labelled `labsyspharm/concat:latest` using
+An example of building a docker image labelled `datarail/concat:latest` using
 this Dockerfile.
 
 ```bash
-docker build -t labsyspharm/concat .
+docker build -t datarail/concat .
 ```
 
 ## Dockerhub
@@ -22,7 +22,7 @@ authenticated to Dockerhub:
 
 ```bash
 docker login
-docker push labsyspharm/concat:latest
+docker push datarail/concat:latest
 ```
 
 As a convenience we usually make use of GitHub web-hooks to trigger a build on
