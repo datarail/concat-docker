@@ -84,3 +84,4 @@ All Dockerised applications are expected to have (at minimum):
  - A configuration file specific to the application within the volume mounted at
   `/mnt/input`
  - An optional ability to accept environment variables
+ - Example data in `datarail-example-data` AWS S3 Bucket
