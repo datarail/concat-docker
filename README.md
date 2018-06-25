@@ -49,6 +49,16 @@ wish to have the output written into an (existing) directory
 ...
 ```
 
+Running a containerised application configured with docker-compose is achieved
+by calling `docker-compose run <app>` where `<app>` is the name of the service
+in the docker-compose file. The `--rm` informs docker that the container used to
+run the application should be deleted upon completion which is generally
+desirable unless debugging a failure using intermediate state.
+
+```bash
+docker-compose run --rm concat
+```
+
 ## Application configuration
 
 It is expected that each application written that conforms roughly to this
