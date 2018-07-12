@@ -19,7 +19,7 @@ except Exception:
     convert_to_upper = False
 
 # Read an expected configuration file
-with open('/config/concat_config.yml') as c:
+with open('/config/concat.yml') as c:
     config = yaml.safe_load(c)
 
 # Concatenate the files into a single string

@@ -66,14 +66,20 @@ template will have a configuration file that the user will provider specifying
 the parameters to use when running the application on the given data. This
 should be found in the config directory and named according to the specification
 of the application for which it is intended. In this example, the configuration
-file is expected to be called `concat_config.yml`.
+file is expected to be called `concat.yml`.
 
 ## Data
 
-Example data for running the `concat` application. Includes the required
-`concat_config.yml` config file and two files to be concatenated. The Docker
-compose file currently references this directory relative to the location of the
-`docker-compose.yml` as the input directory.
+Example data for running the `concat` application. Includes the two files to be
+concatenated. The Docker compose file currently references this directory
+relative to the location of the `docker-compose.yml` as the input directory.
+
+## Config
+
+Example config for running the `concat` application. Includes the required
+`concat.yml` config file. The Docker compose file currently references this
+directory relative to the location of the `docker-compose.yml` as the config
+directory.
 
 ## Standard Docker Layout
 
