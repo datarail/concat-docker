@@ -44,8 +44,8 @@ wish to have the output written into an (existing) directory
 ```yaml
 ...
   volumes:
-   - /Users/bob/myproject/input_data/:/mnt/input:ro
-   - /Users/bob/myproject/concatenated_data/:/mnt/output
+   - /Users/bob/myproject/input_data/:/input:ro
+   - /Users/bob/myproject/concatenated_data/:/output
 ...
 ```
 
@@ -64,9 +64,9 @@ docker-compose run --rm concat
 It is expected that each application written that conforms roughly to this
 template will have a configuration file that the user will provider specifying
 the parameters to use when running the application on the given data. This
-should be found in the directory used as input and named according to the
-specification of the application for which it is intended. In this example, the
-configuration file is expected to be called `concat_config.yml`.
+should be found in the config directory and named according to the specification
+of the application for which it is intended. In this example, the configuration
+file is expected to be called `concat_config.yml`.
 
 ## Data
 
@@ -79,9 +79,10 @@ compose file currently references this directory relative to the location of the
 
 All Dockerised applications are expected to have (at minimum):
 
- - A volume mounted into the container at `/mnt/input` for input data
- - A volume mounted into the container at `/mnt/output` for output data
+ - A volume mounted into the container at `/config` for configuration
+ - A volume mounted into the container at `/input` for input data
+ - A volume mounted into the container at `/output` for output data
  - A configuration file specific to the application within the volume mounted at
-  `/mnt/input`
+  `/config`
  - An optional ability to accept environment variables
  - Example data in `datarail-example-data` AWS S3 Bucket

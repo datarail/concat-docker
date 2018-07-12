@@ -1,3 +1,4 @@
+# Version of Docker-Compose (Not the image)
 version: "3"
 
 services:
@@ -11,13 +12,17 @@ services:
 
     # Reference: https://docs.docker.com/compose/compose-file/#short-syntax-3
     volumes:
+     # Relative path to the host location of the configuration files (Could also
+     # be an absolute path). Is mounted inside the container at /config.
+     # Mounted read-only for safety.
+     - ./config/:/config:ro
      # Relative path to the host location containing the input data (Could also
-     # be an absolute path). Is mounted inside the container at /mnt/input.
-     # Mounted read-only for safety
-     - ./data/:/mnt/input:ro
+     # be an absolute path). Is mounted inside the container at /input.
+     # Mounted read-only for safety.
+     - ./data/:/input:ro
      # Absolute path to a location to put the output on the host (Could also be
-     # an absolute path). Is mounted inside the container at /mnt/output
-     - /tmp/:/mnt/output
+     # an absolute path). Is mounted inside the container at /output
+     - /tmp/:/output
 
     # Reference: https://docs.docker.com/compose/compose-file/#environment
     environment:

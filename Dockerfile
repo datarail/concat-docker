@@ -9,8 +9,8 @@ COPY requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Create the mount points that are used for inputs and outputs
-RUN mkdir /mnt/input \
-  && mkdir /mnt/output
+RUN mkdir /input \
+  && mkdir /output
 
 # Copy the python application into the image
 COPY concat.py /usr/local/bin/concat.py
