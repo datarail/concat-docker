@@ -8,7 +8,7 @@ services:
 
     # Reference: https://docs.docker.com/compose/compose-file/#image
     # The name of the image locally and/or from docker-hub
-    image: labsyspharm/concat:latest
+    image: datarail/concat:latest
 
     # Reference: https://docs.docker.com/compose/compose-file/#short-syntax-3
     volumes:
